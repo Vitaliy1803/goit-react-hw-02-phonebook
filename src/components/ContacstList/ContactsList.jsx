@@ -1,13 +1,19 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 
 const ContactsList = ({ contacts }) => {
   return (
     <ul>
-      {contacts.map(({ id, name }) => (
-        <li key={id} id={id} name={name}></li>
+      {contacts.map(contact => (
+        <li key={contact.id} id={contact.id} name={contact.name}>
+          {contact.name}: {contact.number}
+        </li>
       ))}
     </ul>
   );
+};
+
+ContactsList.propTypes = {
+  contacts: PropTypes.array.isRequired,
 };
 
 export default ContactsList;
