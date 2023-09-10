@@ -8,7 +8,7 @@ export const Container = styled.div`
 
 export const Form = styled.form`
   max-width: 300px;
-  margin: 0 auto;
+  //margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
