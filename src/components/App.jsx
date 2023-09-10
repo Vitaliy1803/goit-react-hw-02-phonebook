@@ -35,9 +35,15 @@ export class App extends Component {
       alert(`${name} is already in contacts`);
       return;
     }
-    
+
     this.setState(({ contacts }) => ({
       contacts: [contact, ...contacts],
+    }));
+  };
+
+  deleteContact = contactId => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
     }));
   };
 
@@ -53,7 +59,10 @@ export class App extends Component {
         <ContactForm onAddContact={this.addContact} />
         <h2>Contacts</h2>
         <Filter value={this.state.filter} onChange={this.changeFilter} />
-        <ContacstList contacts={filteredContacts} />
+        <ContacstList
+          contacts={filteredContacts}
+          onDeleteContact={this.deleteContact}
+        />
       </div>
     );
   }
