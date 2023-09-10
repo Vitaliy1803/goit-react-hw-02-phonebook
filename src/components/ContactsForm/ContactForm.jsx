@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 
 export class ContactForm extends Component {
   state = {
@@ -13,17 +13,7 @@ export class ContactForm extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    const { name, number } = this.state;
-
-    if (name.trim() === '' || number.trim() === '') {
-      alert('Please enter a valid name and number.');
-      return;
-    }
-
-    const newContact = { id: nanoid(), name, number };
-
-    this.props.onSubmit(newContact);
-
+    this.props.onAddContact(this.state.name, this.state.number);
     this.setState({ name: '', number: '' });
   };
 
