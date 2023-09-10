@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { nanoid } from 'nanoid';
+import { Form, Input, Button, Container } from './ContactForm.styled';
 
 export class ContactForm extends Component {
   state = {
@@ -19,10 +19,10 @@ export class ContactForm extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleFormSubmit}>
+      <Container>
+        <Form onSubmit={this.handleFormSubmit}>
           <label htmlFor="name">Name</label>
-          <input
+          <Input
             type="text"
             name="name"
             required
@@ -30,16 +30,16 @@ export class ContactForm extends Component {
             value={this.state.name}
           />
           <label htmlFor="number">Number</label>
-          <input
+          <Input
             type="tel"
             name="number"
             required
             onChange={this.handleChange}
             value={this.state.number}
           />
-          <button type="submit">Add contact</button>
-        </form>
-      </div>
+          <Button type="submit">Add contact</Button>
+        </Form>
+      </Container>
     );
   }
 }
