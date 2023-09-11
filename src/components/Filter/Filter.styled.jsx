@@ -5,7 +5,7 @@ export const Input = styled.input`
   padding: 8px;
   margin-bottom: 10px;
   border-radius: 5px;
-  border: 2px solid #ccc;
+  border: 1px solid #ccc;
 `;
 
 export const Label = styled.label`
